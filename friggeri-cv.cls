@@ -26,6 +26,7 @@
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
+\definecolor{myblue}{rgb}{0.22,0.45,0.70}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -36,11 +37,12 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{gray}
+  \colorlet{fillheader}{myblue}
   \colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
-\colorlet{headercolor}{gray}
+\colorlet{headercolor}{myblue}
+\colorlet{subheadercolor}{gray}
 
 %%%%%%%%%
 % Fonts %
@@ -115,14 +117,15 @@
   \par\vspace{\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
-    \@sectioncolor #1%
+    %\@sectioncolor #1%
+    #1%
   }
   \par\vspace{\parskip}
 }
 
-\renewcommand{\subsection}[2]{
+\renewcommand{\subsection}[1]{
   \par\vspace{.5\parskip}%
-  \Large\headingfont\color{headercolor} #2%
+  \Large\headingfont\color{subheadercolor} #1%
   \par\vspace{.25\parskip}%
 }
 
@@ -139,7 +142,7 @@
 }{%
   \end{tabular*}
 }
-\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\renewcommand{\bfseries}{\headingfont\color{subheadercolor}}
 \newcommand{\entry}[4]{%
   #1&\parbox[t]{11.8cm}{%
     \textbf{#2}%
@@ -159,7 +162,7 @@
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\baselineskip}{\Large\headingfont\color{subheadercolor} ##1}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
