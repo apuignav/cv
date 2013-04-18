@@ -49,14 +49,17 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+\newfontfamily\bodyfont[]{Myriad Pro}
+\newfontfamily\thinfont[]{Myriad Pro Light}
+\newfontfamily\headingfont[]{Myriad Pro Bold Condensed}
+\newfontfamily\condensedfont[]{Myriad Pro Light Condensed}
+\newfontfamily\boldfont[]{Myriad Pro Bold SemiCondensed}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor, Numbers=OldStyle]{Myriad Pro Light}
 
-\setmathfont{XITS Math}
+% options come from http://tex.stackexchange.com/questions/34855/selecting-main-math-font-in-luatex
+\setmathfont[range=\mathit]{Myriad Pro Light Italic}
 
 %%%%%%%%%%
 % Header %
