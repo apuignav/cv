@@ -26,6 +26,7 @@
 \definecolor{cvblue}{rgb}{0.22,0.45,0.70}
 
 \ifdefined\@cv@print
+  \definecolor{cvblue}{HTML}{333333}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
