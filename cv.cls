@@ -1,13 +1,17 @@
-\ProvidesClass{friggeri-cv}[2012/04/30 CV class]
+\ProvidesClass{cv}[2012/04/30 CV class]
+% Heavily based on friggieri-cv
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
 }
+\DeclareOption{rotatecolors}{\def\@cv@rotatecolors{}}
 \ProcessOptions\relax
 \LoadClass{article}
 
+
+\RequirePackage{amsmath}
 
 %%%%%%%%%%
 % Colors %
@@ -26,7 +30,7 @@
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
-\definecolor{myblue}{rgb}{0.22,0.45,0.70}
+\definecolor{cvblue}{rgb}{0.22,0.45,0.70}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -37,31 +41,38 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{myblue}
+  \colorlet{fillheader}{cvblue}
   \colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
-\colorlet{headercolor}{myblue}
+\colorlet{headercolor}{cvblue}
 \colorlet{subheadercolor}{gray}
 
 %%%%%%%%%
 % Fonts %
 %%%%%%%%%
-
+\RequirePackage{xspace}
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
 \newfontfamily\bodyfont[]{Myriad Pro}
+\newfontfamily\bodyhifont[]{Myriad Pro SemiCondensed}
 \newfontfamily\thinfont[]{Myriad Pro Light}
 \newfontfamily\headingfont[]{Myriad Pro Bold Condensed}
-\newfontfamily\condensedfont[]{Myriad Pro Light Condensed}
-\newfontfamily\boldfont[]{Myriad Pro Bold SemiCondensed}
+\newfontfamily\condensedfont[]{Myriad Pro SemiCondensed}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor, Numbers=OldStyle]{Myriad Pro Light}
-
-% options come from http://tex.stackexchange.com/questions/34855/selecting-main-math-font-in-luatex
-\setmathfont[range=\mathit]{Myriad Pro Light Italic}
+\setmainfont[Mapping=tex-text,
+             Color=textcolor,
+             Numbers=OldStyle,
+             ItalicFont = {Myriad Pro Light Italic},
+             BoldFont = {Myriad Pro Light}]{Myriad Pro Light}
+\setmathfont{Myriad Pro Light Italic}
+\setmathfont[range=\mathup,Color=textcolor]{Myriad Pro Light}
+\setmathfont[range=\mathit,Color=textcolor]{Myriad Pro Light Italic}
+\setmathfont[range=\mathbfit]{Myriad Pro SemiCondensed}
+\setmathfont[range=\mathbfup]{Myriad Pro SemiCondensed Italic}
+\setmathfont[range=\rightarrow]{Source Sans Pro Light}
 
 %%%%%%%%%%
 % Header %
@@ -97,27 +108,10 @@
 %%%%%%%%%%%%%
 \RequirePackage{parskip}
 
-\newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\else%
-        headercolor\fi%
-    } #1#2#3%
-  }%
-  \stepcounter{colorCounter}%
-}
-
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
-    %\@sectioncolor #1%
     #1%
   }
   \par\vspace{\parskip}
@@ -125,7 +119,9 @@
 
 \renewcommand{\subsection}[1]{
   \par\vspace{.5\parskip}%
-  \Large\headingfont\color{subheadercolor} #1%
+  {
+    \Large\headingfont\color{subheadercolor} #1%
+  }
   \par\vspace{.25\parskip}%
 }
 
@@ -135,21 +131,33 @@
 %%%%%%%%%%%%%%%%%%%%
 % List environment %
 %%%%%%%%%%%%%%%%%%%%
-
 \setlength{\tabcolsep}{0pt}
-\newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
-  \end{tabular*}
-}
+
 \renewcommand{\bfseries}{\headingfont\color{subheadercolor}}
-\newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
-    \textbf{#2}%
+
+\newcommand{\cventry}[4]{%
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  #1
+  &\parbox[t]{11.8cm}{%
+    {\bodyhifont #2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{\parsep}%
-  }\\}
+    \ifx
+  &#4& 
+    \else
+      {\small #4}\vspace{1.5\parsep}%
+    \fi
+    }        
+    \end{tabular*}\\[-1mm]
+}
+
+\newcommand{\desc}[2]{%
+  #1&\parbox[t]{11.8cm}{%
+    \ifx&#2& 
+    \else
+        #2\vspace{1.5\parsep}%
+    \fi
+}\\}
 
 
 %%%%%%%%%%%%%%
@@ -162,13 +170,13 @@
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{subheadercolor} ##1}
+    \par\vspace{\baselineskip}{\Large\headingfont\color{subheadercolor} ##1\\}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
-  \obeycr
+  %\obeycr
 }{%
-  \restorecr
+  %\restorecr
   \end{flushright}
   \end{textblock}
   \let\section\oldsection
@@ -280,8 +288,6 @@
   \sort[direction=descending]{\field{year}}
   \sort[direction=descending]{\field{month}}
 }
-
-
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
