@@ -1,0 +1,288 @@
+% cv_content.tex
+% Content of the CV
+
+% Aesthetics
+\usepackage{xspace}
+\def\epfl{\'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne\xspace}
+\def\myast{\text{\,*}}
+
+% Start
+\begin{document}
+\header{albert}{puig}
+       {high energy physicist}
+
+\begin{aside}
+  \section{about}
+    Albert Puig Navarro\\
+    Born on 26-07-1984\\
+    Spanish\\
+    ~\\
+    Avenue Chailly 22\\
+    1012 Lausanne\\
+    Switzerland\\
+    ~\\
+    \href{mailto:albert.puig@epfl.ch}{albert.puig@epfl.ch}\\
+    \href{https://github.com/apuignav}{github://apuignav}\\
+    %+41 (0)216939808
+  %\section{languages}
+    %bilingual french/english
+    %spanish \& italian notions
+\ifthenelse{\boolean{includeprogramming}}
+{  \section{programming}
+    Python, C++,\\
+    Fortran, PVSS,\\
+    MySQL, VB.NET\\
+}{}
+    \section{interests}
+    high-energy physics\\
+    $B$ physics\\
+    radiative $B$ decays\\
+    trigger techniques\\
+    computing\\
+\end{aside}
+
+\section{education \& employment}
+
+  \cventry
+    {since 2012}
+    {Postdoctoral Fellowship}
+    {\epfl(Switzerland)}
+    {}
+  \cventry
+    {2007--2012}
+    {PhD in Physics}
+    {Universitat de Barcelona (Spain)}
+    {\emph{First measurements of radiative $B$ decays in LHCb}, supervised by Ricardo Graciani}
+  \cventry
+    {2007}
+    {MSc in Astrophysics, Particle Physics and Cosmology}
+    {Universitat de Barcelona (Spain)}
+    {\emph{SPD monitoring}, supervised by Ricardo Graciani}
+  \cventry
+    {2002--2007}
+    {Degree in Physics}
+    {Universitat de Barcelona (Spain)}
+    {}
+
+\section{research activities}
+I have been member of the LHCb collaboration since 2007 and I am coauthor of its 193 papers.
+
+%Since 2012 I am the trigger liaison for the LHCb Rare Decays working group and since 2013 I am the convener of the LHCb Radiative Decays working group.
+
+\subsection{radiative decays}
+    \cventry
+    {2013--present}
+    {Convener of the LHCb Radiative Decays Working Group}
+    {}
+    {}
+    \cventry
+    {2012--present}
+    {Study of the photon polarisation with $\mathbf{B^+\!\to K^+\pi^-\pi^+\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Observation of photon polarization in the $b \to s\gamma$ transition}, Phys. Rev. Lett. \textbf{112} (2014) $161801$}
+    \cventry
+    {2011--2012}
+    {Study of the $\mathbf{CP}$ asymmetry in $\mathbf{B^0\!\to K^{\myast0}\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Measurement of the ratio of branching fractions ${\cal B}(B^0\!\to K^{\myast0} \gamma) /$ ${\cal B}(B^0_s\!\to \phi \gamma)$ and the direct $CP$ asymmetry in $B^0\!\to K^{\myast0} \gamma$}, Nucl. Phys. \textbf{B867} (2013) $1$--$18$}
+    \cventry
+    {2011--2012}
+    {Study of the ratio of branching fractions of $\mathbf{B^0\!\to K^{\myast0}\gamma}$ and $\mathbf{B^0_s\!\to \phi\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Measurement of the ratio of branching fractions $\mathcal{B}(B^0\!\to K^{\myast0}\gamma)/$ $\mathcal{B}(B_s^0\to\phi\gamma)$}, Phys. Rev. \textbf{D85} (2012) $112013$}
+
+\subsection{trigger}
+    \cventry
+    {2012--present}
+    {Trigger liaison for the Rare Decays working group}
+    {}
+    {}
+    \cventry
+    {2011--present}
+    {Design and implementation of trigger strategies for radiative $\mathbf{B}$ decays}
+    {}
+    {Puig, A., \textit{The HLT$2$ Radiative Topological Lines}, LHCb-PUB-$2012$-$002$. CERN-LHCb-PUB-$2012$-$002$ (2012)}
+
+\subsection{computing}
+    \cventry
+    {2012--2014}
+    {Main developer and responsible for the SciFi test beam analysis software}
+    {}
+    {}
+    \cventry
+    {2011--2012}
+    {Integration of the DIRAC middleware with the WS-PGRADE portal to allow the execution of gUSE workflows in a distributed computing environment}
+    {}
+    {Puig, A. \emph{et al.}, \textit{Integration of the gUSE/WS-PGRADE and InSilicoLab portals with DIRAC}, J. Phys. Conf. Ser. \textbf{396} (2012) $032088$}
+    \cventry
+    {2010}
+    {Analysis of the LHCb users behavior patterns on the Grid by dumping the information from the DIRAC Accounting database}
+    {}
+    {Casaj{\'u}s, A. \emph{et al}, \textit{The LHCb experience on the Grid from the DIRAC accounting data}, J. Phys. Conf. Ser. \textbf{331} (2011) $072059$}
+    \cventry
+    {2007--2010}
+    {Design and implementation of a system to perform prompt event reconstruction in the LHCb Online farm}
+    {}
+    {Puig, A. and Frank, M., \textit{Event reconstruction in the LHCb online cluster}, J. Phys. Conf. Ser. \textbf{219} (2010) $022020$}
+
+\subsection{hardware r\&d}
+    \cventry
+    {2012--2014}
+    {R\&D studies on SiPM for the LHCb Upgrade, including clustering algorithms and cosmic rays tests}
+    {}
+    {Bay, A. \emph{et al.}, \textit{Viability Assessment of a Scintillating Fibre Tracker for the LHCb Upgrade}, LHCb-PUB-2014-015. CERN-LHCb-PUB-2014-015. LHCb-INT-2013-004 (2014)}
+    \cventry
+    {2008--2011}
+    {Fine calibration of the LHCb Electromagnetic Calorimeter with $\mathbf{\pi^0}$}
+    {}
+    {Belyaev, I. \emph{et al.}, \textit{Kali: The framework for fine calibration of the LHCb electromagnetic calorimeter}, J. Phys. Conf. Ser. \textbf{331} (2011) $032050$}
+    \cventry
+    {2007--2008}
+    {Design and implementation of the monitoring of the LHCb SPD subdetector}
+    {}
+    {Abellan Beteta, C. \emph{et al.}, \textit{Time alignment of the front end electronics of the LHCb calorimeters.}, J. Instrum. \textbf{7} (2011) P$08020$}
+
+\ifthenelse{\boolean{includeconferences}}
+{
+\section{conference contributions}
+
+    \cventry
+        {2014}
+        {Radiative electroweak penguins at LHCb}
+        {Edinburgh (UK)}
+        {Talk at \emph{15th International Conference on B-Physics at Frontier Machines}}
+    \cventry
+        {2013}
+        {The LHCb Trigger System: Performance and Outlook}
+        {Seoul (South Korea)}
+        {Talk at \emph{IEEE Nuclear Science Symposium} 2013, October 27--November 2}
+    \cventry
+        {2013}
+        {Radiative $\mathbf{B}$ decays at LHCb}
+        {Stockholm (Sweden)}
+        {Talk at \emph{EPSHEP} $2013$, July 18--24}
+    \cventry
+        {2013}
+        {Rare beauty and charm decays}
+        {Ann Arbor, Michigan (USA)}
+        {Talk at \emph{KAON}$2013$, April 29--May 1}
+    \cventry
+        {2012}
+        {Radiative $\mathbf{B}$ decays in LHCb}
+        {Benasque (Spain)}
+        {Talk at \emph{International Meeting on Fundamental Physics}, May 24--June 3}
+    \cventry
+        {2012}
+        {Integration of the gUSE/WS-PGRADE and InSilicoLab portals with DIRAC}
+        {New York (USA)}
+        {Poster at \emph{Computer in High Energy and Nuclear Physics (CHEP) 2012}, May 21--25}
+    \cventry
+        {2012}
+        {Radiative $\mathbf{B}$ decays in LHCb}
+        {Marseille (France)}
+        {Seminar at CPPM, March 22}
+    \cventry
+        {2012}
+        {Results on radiative $\mathbf{B}$ decays}
+        {Lake Louise (Canada)}
+        {Talk at \emph{Lake Louise Winter Institute}, February 19--25}
+    \cventry
+        {2011}
+        {Radiative $\mathbf{B}$ decays at LHCb}
+        {Barcelona (Spain)}
+        {Talk at \emph{III CPAN Days}, November 2--4}
+    \cventry
+        {2011}
+        {Exclusive rare $\mathbf{B}$ decays at LHCb}
+        {Durham (United Kingdom)}
+        {Talk at \emph{IPPP Flavour and the 4th generation, September 14--16}}
+    \cventry
+        {2010}
+        {The LHCb experience on the Grid from the DIRAC Accounting data}
+        {Taipei (Taiwan)}
+        {Poster at \emph{Computing in High Energy and Nuclear Physics (CHEP) 2010}, October 18--22}
+    \cventry
+        {2010}
+        {Kali: the framework for fine calibration of LHCb Calorimeter}
+        {Taipei (Taiwan)}
+        {Poster at \emph{Computing in High Energy and Nuclear Physics (CHEP) 2010}, October 18--22}
+    \cventry
+        {2009}
+        {Calibraci\'{o}n fina del calor\'{i}metro electromagn\'{e}tico de LHCb}
+        {Ciudad Real (Spain)}
+        {Talk at \emph{XXXII Reuni\'{o}n Bienal de la RSEF}, September 7--11}
+    \cventry
+        {2009}
+        {Event reconstruction in the LHCb Online cluster}
+        {Prague (Czech Republic)}
+        {Talk at \emph{Computing in High Energy and Nuclear Physics (CHEP) 2009}, March 23--27}
+}{}
+
+\ifthenelse{\boolean{includeteaching}}
+{
+\section{teaching duties}
+    \cventry
+        {2014}
+        {TP4 Project supervisor}
+        {\epfl(Switzerland)}
+        {Violaine Bellée, \emph{Search for the $B^0\rightarrow \phi K^{\myast0}\gamma$ and $B_s^0\rightarrow \phi \phi\gamma$ decays at LHCb}, Spring Semester}
+    \cventry
+        {2013--2014}
+        {MSc Thesis supervisor}
+        {\epfl(Switzerland)}
+        {Eleonie Van Schreven, \emph{Photon polarisation sensitivity in $B^0_s\rightarrow \phi\gamma$ decays at LHCb}, Autumn Semester}
+    \cventry
+        {2013}
+        {TP4 Project supervisor}
+        {\epfl(Switzerland)}
+        {Brice Maurin, \emph{Improving the selection for the decay $B^0\rightarrow K^{\myast0} \gamma$}, Spring Semester}
+    \cventry
+        {2012--2013}
+        {MSc Thesis supervisor}
+        {\epfl(Switzerland)}
+        {Isaure Leboucq, \emph{Observation of the decay $B^+\rightarrow K^+\pi^-\pi^-\gamma$ at LHCb}, Autumn Semester}
+    \cventry
+        {2011-2012}
+        {Physics lab}
+        {Universitat de Barcelona (Spain)}
+        {Faculty of Chemistry, Autumn Semester}
+    \cventry
+        {2011}
+        {Taller de Altas Energ\'{i}as}
+        {Universidad del País Vasco, Bilbao (Spain)}
+        {Exercise supervisor for \emph{ATLAS Physics} course, under Peter Jenni (CERN).\\ Exercise supervisor for \emph{Standard Model} course, under Nuria Rius (IFIC).}
+        %{July 11--22}
+    \cventry
+        {2010--2011}
+        {Lab fundamentals}
+        {Universitat de Barcelona (Spain)}
+        {Faculty of Physics, Spring Semester}
+    \cventry
+        {2009--2010}
+        {Modern Physics Lab}
+        {Universitat de Barcelona (Spain)}
+        {Faculty of Physics, Autumn Semester}
+}{}
+    
+
+%\section{computer skills}
+
+%\section{selected publications}
+
+%\section{LHCb papers}
+
+%\printbibsection{article}{article in peer-reviewed journal}
+%\begin{refsection}
+  %\nocite{*}
+  %\printbibliography[sorting=chronological, type=inproceedings, title={international peer-reviewed conferences/proceedings}, notkeyword={france}, heading=subbibliography]
+%\end{refsection}
+%\begin{refsection}
+  %\nocite{*}
+  %\printbibliography[sorting=chronological, type=inproceedings, title={local peer-reviewed conferences/proceedings}, keyword={france}, heading=subbibliography]
+%\end{refsection}
+%\printbibsection{misc}{other publications}
+%\printbibsection{report}{research reports}
+
+\end{document}
+
+% EOF
