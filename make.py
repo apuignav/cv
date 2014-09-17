@@ -11,7 +11,7 @@ import os
 import argparse
 
 template = r"""%%!TEX TS-program = xelatex
-\documentclass{cv}
+\documentclass[%s]{cv}
 
 %% Section config
 \usepackage{ifthen}
@@ -29,13 +29,15 @@ if __name__ == '__main__':
     parser.add_argument('--no-programming', action='store_true', default=False)
     parser.add_argument('--no-conf', action='store_true', default=False)
     parser.add_argument('--no-teaching', action='store_true', default=False)
+    parser.add_argument('-p', '--print-format', action='store_true', default=False)
     args = parser.parse_args()
     # Get values
     programming = 'false' if args.no_programming else 'true'
     conferences = 'false' if args.no_conf else 'true'
     teaching = 'false' if args.no_teaching else 'true'
+    print_format = 'print' if args.print_format else ''
     # Write file
-    text = template % (programming, conferences, teaching)
+    text = template % (print_format, programming, conferences, teaching)
     if os.path.exists('cv_modified.tex'):
         os.remove('cv_modified.tex')
     with open('cv_modified.tex', 'w') as cv_file:
