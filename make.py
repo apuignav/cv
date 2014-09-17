@@ -30,6 +30,7 @@ if __name__ == '__main__':
     parser.add_argument('--no-conf', action='store_true', default=False)
     parser.add_argument('--no-teaching', action='store_true', default=False)
     parser.add_argument('-p', '--print-format', action='store_true', default=False)
+    parser.add_argument('--dry-run', action='store_true', default=False)
     args = parser.parse_args()
     # Get values
     programming = 'false' if args.no_programming else 'true'
@@ -42,6 +43,10 @@ if __name__ == '__main__':
         os.remove('cv_modified.tex')
     with open('cv_modified.tex', 'w') as cv_file:
         cv_file.write(text)
-    os.system('xelatex -jobname=cv cv_modified.tex && xelatex -jobname=cv cv_modified.tex')
+    if not args.dry_run:
+        if print_format:
+            print_format = '_print'
+        os.system('xelatex -jobname=cv cv_modified.tex && xelatex -jobname=cv%s cv_modified.tex' % print_format)
+        os.remove('cv_modified.tex')
 
 # EOF
