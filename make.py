@@ -46,7 +46,7 @@ if __name__ == '__main__':
     if not args.dry_run:
         if print_format:
             print_format = '_print'
-        os.system('xelatex -jobname=cv cv_modified.tex && xelatex -jobname=cv%s cv_modified.tex' % print_format)
+        os.system('xelatex -jobname=cv%s cv_modified.tex && xelatex -jobname=cv%s cv_modified.tex' % (print_format, print_format))
         os.remove('cv_modified.tex')
 
 # EOF
