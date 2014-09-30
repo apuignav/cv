@@ -1,0 +1,289 @@
+% cv_content.tex
+% Content of the CV
+
+% Aesthetics
+\usepackage{xspace}
+\def\epfl{\'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne\xspace}
+\def\myast{\text{\,*}}
+
+% Start
+\begin{document}
+\header{albert}{puig}
+       {físico de altas energías}
+
+\begin{aside}
+  \section{sobre mi}
+    Albert Puig Navarro\\
+    Nacido en 26-07-1984\\
+    ~\\
+    Avenue Chailly 22\\
+    1012 Lausanne\\
+    Suiza\\
+    ~\\
+    \href{mailto:albert.puig@epfl.ch}{albert.puig@epfl.ch}\\
+    \href{https://github.com/apuignav}{github://apuignav}\\
+    %+41 (0)216939808
+  %\section{languages}
+    %bilingual french/english
+    %spanish \& italian notions
+\ifthenelse{\boolean{includeprogramming}}
+{  \section{programación}
+    Python, C++,\\
+    Fortran, PVSS,\\
+    MySQL, VB.NET\\
+}{}
+    \section{intereses}
+    física de altas energías\\
+    física de $B$\\
+    técnicas de trigger\\
+    análisis de datos\\
+    computación\\
+
+\end{aside}
+
+\section{educación}
+
+  \cventry
+    {desde 2012}
+    {Investigador postdoctoral}
+    {\epfl(Suiza)}
+    {}
+  \cventry
+    {2007--2012}
+    {Doctorado en Física}
+    {Universitat de Barcelona (España)}
+    {\emph{First measurements of radiative $B$ decays in LHCb}, supervisado por Ricardo Graciani}
+  \cventry
+    {2007}
+    {Master en Astrofísica, Física de Partículas y Cosmología}
+    {Universitat de Barcelona (España)}
+    {\emph{SPD monitoring}, supervisado por  Ricardo Graciani}
+  \cventry
+    {2002--2007}
+    {Licenciatura en Física}
+    {Universitat de Barcelona (España)}
+    {}
+
+\section{actividades de investigación}
+Soy miembro de la colaboración LHCb desde 2007 y soy coautor de sus 193 publicaciones.
+
+%Since 2012 I am the trigger liaison for the LHCb Rare Decays working group and since 2013 I am the convener of the LHCb Radiative Decays working group.
+
+\subsection{desintegraciones radiativas}
+    \cventry
+    {desde 2013}
+    {Coordinador del grupo de Radiative Decays en LHCb}
+    {}
+    {}
+    \cventry
+    {desde 2012}
+    {Estudio de la polarización del fotón en $\mathbf{B^+\!\to K^+\pi^-\pi^+\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Observation of photon polarization in the $b \to s\gamma$ transition}, Phys. Rev. Lett. \textbf{112} (2014) $161801$}
+    \cventry
+    {2011--2012}
+    {Estudi de la asimetria de $\mathbf{CP}$ en $\mathbf{B^0\!\to K^{\myast0}\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Measurement of the ratio of branching fractions ${\cal B}(B^0\!\to K^{\myast0} \gamma) /$ ${\cal B}(B^0_s\!\to \phi \gamma)$ and the direct $CP$ asymmetry in $B^0\!\to K^{\myast0} \gamma$}, Nucl. Phys. \textbf{B867} (2013) $1$--$18$}
+    \cventry
+    {2011--2012}
+    {Estudio de la razón de fracciones de desintegración de $\mathbf{B^0\!\to K^{\myast0}\gamma}$ y $\mathbf{B^0_s\!\to \phi\gamma}$}
+    {}
+    {LHCb collaboration, Aaij, R. \textit{et al.}, \textit{Measurement of the ratio of branching fractions $\mathcal{B}(B^0\!\to K^{\myast0}\gamma)/$ $\mathcal{B}(B_s^0\to\phi\gamma)$}, Phys. Rev. \textbf{D85} (2012) $112013$}
+
+\subsection{trigger}
+    \cventry
+    {desde 2012}
+    {Enlace del grupo de trigger en el grupo de trabajo de Rare Decays}
+    {}
+    {}
+    \cventry
+    {desde 2011}
+    {Diseño e implementación de estrategias de trigger para desintegraciones radiativas de mesones $\mathbf{B}$}
+    {}
+    {Aaij, R. \textit{et al.}, \textit{The LHCb trigger and its performance in 2011}, JINST \textbf{8} (2013) P$04022$\\
+     Puig, A., \textit{The HLT$2$ Radiative Topological Lines}, LHCb-PUB-$2012$-$002$. CERN-LHCb-PUB-$2012$-$002$ (2012)}
+
+\subsection{computación}
+    \cventry
+    {2012--2014}
+    {Responsable y desarrollador principal del \emph{software} de analisis de \emph{test beams} para el detector SciFi}
+    {}
+    {}
+    \cventry
+    {2011--2012}
+    {Integración del \emph{middleware} DIRAC con el portal WS-PGRADE para la ejecución de tareas gUSE en un entorno de computación distribuida}
+    {}
+    {Puig, A. \emph{et al.}, \textit{Integration of the gUSE/WS-PGRADE and InSilicoLab portals with DIRAC}, J. Phys. Conf. Ser. \textbf{396} (2012) $032088$}
+    \cventry
+    {2010}
+    {Análisis de patrones de uso del GRID de los usuarios de LHCb a través del estudio de la base de datos Accounting de DIRAC}
+    {}
+    {Casaj{\'u}s, A. \emph{et al}, \textit{The LHCb experience on the Grid from the DIRAC accounting data}, J. Phys. Conf. Ser. \textbf{331} (2011) $072059$}
+    \cventry
+    {2007--2010}
+    {Diseño e implementación de un sistema para la reconstrucción de sucesos en la LHCb Online farm}
+    {}
+    {Puig, A. and Frank, M., \textit{Event reconstruction in the LHCb online cluster}, J. Phys. Conf. Ser. \textbf{219} (2010) $022020$}
+
+\subsection{i\&d de hardware}
+    \cventry
+    {2012--2014}
+    {Estudios de I\&D de SiPM para el Upgrade de LHCb, incluyendo algoritmos de \emph{clustering} y pruebas con rayos cósmicos}
+    {}
+    {Bay, A. \emph{et al.}, \textit{Viability Assessment of a Scintillating Fibre Tracker for the LHCb Upgrade}, LHCb-PUB-2014-015. CERN-LHCb-PUB-2014-015. LHCb-INT-2013-004 (2014)}
+    \cventry
+    {2008--2011}
+    {Calibración fina del Calorímetro Electromagnético de LHCb con $\mathbf{\pi^0}$}
+    {}
+    {Belyaev, I. \emph{et al.}, \textit{Kali: The framework for fine calibration of the LHCb electromagnetic calorimeter}, J. Phys. Conf. Ser. \textbf{331} (2011) $032050$}
+    \cventry
+    {2007--2008}
+    {Diseño e implementación del sistema de monitorización del subdetector SPD en LHCb}
+    {}
+    {Abellan Beteta, C. \emph{et al.}, \textit{Time alignment of the front end electronics of the LHCb calorimeters.}, J. Instrum. \textbf{7} (2011) P$08020$}
+
+\ifthenelse{\boolean{includeconferences}}
+{
+\section{conferencias y seminarios}
+
+    \cventry
+        {2014}
+        {Radiative electroweak penguins at LHCb}
+        {Edimburgo (Reino Unido)}
+        {Charla en \emph{15th International Conference on B-Physics at Frontier Machines}, 14--18 de julio}
+    \cventry
+        {2014}
+        {Observation of photon polarization in the $\mathbf{b\to s\gamma}$ transition at LHCb}
+        {CERN (Suiza)}
+        {\emph{LHC Seminar}, 18 de marzo}
+    \cventry
+        {2013}
+        {The LHCb Trigger System: Performance and Outlook}
+        {Seoul (Korea del Sur)}
+        {Charla en \emph{IEEE Nuclear Science Symposium} 2013, 27 de octubre a 2 de noviembre}
+    \cventry
+        {2013}
+        {Radiative $\mathbf{B}$ decays at LHCb}
+        {Estocolmo (Suecia)}
+        {Charla en \emph{EPSHEP} $2013$, 18--24 de julio}
+    \cventry
+        {2013}
+        {Rare beauty and charm decays}
+        {Ann Arbor, Michigan (USA)}
+        {Charla en \emph{KAON}$2013$, 29 de abril a 1 de mayo}
+    \cventry
+        {2012}
+        {Radiative $\mathbf{B}$ decays in LHCb}
+        {Benasque (España)}
+        {Charla en \emph{International Meeting on Fundamental Physics}, 24 de mayo a 3 de junio}
+    \cventry
+        {2012}
+        {Integration of the gUSE/WS-PGRADE and InSilicoLab portals with DIRAC}
+        {Nueva York (USA)}
+        {Poster en \emph{Computer in High Energy and Nuclear Physics (CHEP) 2012}, 21--25 de mayo}
+    \cventry
+        {2012}
+        {Radiative $\mathbf{B}$ decays in LHCb}
+        {Marseille (Francia)}
+        {Seminario en el CPPM, 22 de marzo}
+    \cventry
+        {2012}
+        {Results on radiative $\mathbf{B}$ decays}
+        {Lake Louise (Canada)}
+        {Charla en \emph{Lake Louise Winter Institute}, 19--25 de febrero}
+    \cventry
+        {2011}
+        {Radiative $\mathbf{B}$ decays at LHCb}
+        {Barcelona (España)}
+        {Charla en \emph{III CPAN Days}, 2--4 de noviembre}
+    \cventry
+        {2011}
+        {Exclusive rare $\mathbf{B}$ decays at LHCb}
+        {Durham (Reino Unido)}
+        {Charla en \emph{IPPP Flavour and the 4th generation}, 14--16 de septiembre}
+    \cventry
+        {2010}
+        {The LHCb experience on the Grid from the DIRAC Accounting data}
+        {Taipei (Taiwan)}
+        {Poster en \emph{Computing in High Energy and Nuclear Physics (CHEP) 2010}, 18--22 de octubre}
+    \cventry
+        {2010}
+        {Kali: the framework for fine calibration of LHCb Calorimeter}
+        {Taipei (Taiwan)}
+        {Poster en \emph{Computing in High Energy and Nuclear Physics (CHEP) 2010}, 18--22 de octubre}
+    \cventry
+        {2009}
+        {Calibraci\'{o}n fina del calor\'{i}metro electromagn\'{e}tico de LHCb}
+        {Ciudad Real (España)}
+        {Charla en \emph{XXXII Reuni\'{o}n Bienal de la RSEF}, 7--11 de septiembre}
+    \cventry
+        {2009}
+        {Event reconstruction in the LHCb Online cluster}
+        {Praga (República Checa)}
+        {Charla en \emph{Computing in High Energy and Nuclear Physics (CHEP) 2009}, 23--27 de marzo}
+}{}
+
+\ifthenelse{\boolean{includeteaching}}
+{
+\section{docencia}
+    \cventry
+        {2014}
+        {Supervisor de proyecto TP4}
+        {\epfl(Suiza)}
+        {Violaine Bellée, \emph{Search for the $B^0\rightarrow \phi K^{\myast0}\gamma$ and $B_s^0\rightarrow \phi \phi\gamma$ decays at LHCb}, semestre de primavera}
+    \cventry
+        {2013--2014}
+        {Supervisor de tesina de Master}
+        {\epfl(Suiza)}
+        {Eleonie Van Schreven, \emph{Photon polarisation sensitivity in $B^0_s\rightarrow \phi\gamma$ decays at LHCb}, semestre de otoño}
+    \cventry
+        {2013}
+        {Supervisor de proyecto TP4}
+        {\epfl(Suiza)}
+        {Brice Maurin, \emph{Improving the selection for the decay $B^0\rightarrow K^{\myast0} \gamma$}, semestre de primavera}
+    \cventry
+        {2012--2013}
+        {Supervisor de tesina de Master}
+        {\epfl(Suiza)}
+        {Isaure Leboucq, \emph{Observation of the decay $B^+\rightarrow K^+\pi^-\pi^-\gamma$ at LHCb}, semestre de otoño}
+    \cventry
+        {2011-2012}
+        {Laboratorio de Física}
+        {Universitat de Barcelona (España)}
+        {Facultad de Química, semestre de otoño}
+    \cventry
+        {2011}
+        {Taller de Altas Energ\'{i}as}
+        {Universidad del País Vasco, Bilbao (España)}
+        {Encargado de ejercicios del curso \emph{ATLAS Physics}, con Peter Jenni (CERN).\\
+         Encargado de ejercicios del curso \emph{Standard Model}, con Nuria Rius (IFIC).}
+        %{July 11--22}
+    \cventry
+        {2010--2011}
+        {Fundamentos de Laboratorio}
+        {Universitat de Barcelona (España)}
+        {Facultad de Física, semestre de primavera}
+    \cventry
+        {2009--2010}
+        {Laboratorio de Física Moderna}
+        {Universitat de Barcelona (España)}
+        {Facultad de Física, semestre de otoño}
+}{}
+    
+\section{actualizado}
+30 de septiembre de 2014
+
+\includegraphics{signature.jpg}
+%\section{references}
+%Available upon request
+
+%\section{computer skills}
+
+%\section{selected publications}
+
+%\section{LHCb papers}
+
+\end{document}
+
+% EOF

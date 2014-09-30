@@ -19,7 +19,7 @@ template = r"""%%!TEX TS-program = xelatex
 \newboolean{includeconferences}\setboolean{includeconferences}{%s}
 \newboolean{includeteaching}\setboolean{includeteaching}{%s}
 
-\input{cv_content}
+\input{cv_content%s}
 
 %% EOF
 """
@@ -31,14 +31,16 @@ if __name__ == '__main__':
     parser.add_argument('--no-teaching', action='store_true', default=False)
     parser.add_argument('-p', '--print-format', action='store_true', default=False)
     parser.add_argument('--dry-run', action='store_true', default=False)
+    parser.add_argument('--language', action='store', type=str, default='en')
     args = parser.parse_args()
     # Get values
     programming = 'false' if args.no_programming else 'true'
     conferences = 'false' if args.no_conf else 'true'
     teaching = 'false' if args.no_teaching else 'true'
     print_format = 'print' if args.print_format else ''
+    language = '' if args.language == 'en' else '_%s' % args.language
     # Write file
-    text = template % (print_format, programming, conferences, teaching)
+    text = template % (print_format, programming, conferences, teaching, language)
     if os.path.exists('cv_modified.tex'):
         os.remove('cv_modified.tex')
     with open('cv_modified.tex', 'w') as cv_file:
